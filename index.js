@@ -2,7 +2,7 @@ var Botkit = require('botkit');
 var CronJob = require('cron').CronJob;
 var controller = Botkit.slackbot();
 var bot = controller.spawn({
-  token: 'xoxb-68870596480-9zIHFszxcFg9e5ilJg8b0iwW', 
+  token: process.env.token, 
 }).startRTM(function(err,bot,payload) {
   // 初期処理
   if (err) {

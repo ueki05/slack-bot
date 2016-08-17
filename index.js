@@ -9,7 +9,7 @@ var bot = controller.spawn({
     throw new Error('Could not connect to Slack');
   }
   new CronJob({
-    cronTime: '* 0 * * *',
+    cronTime: '00 00 * * *',
       onTick: function() {
         bot.say({
           channel: 'times_ueki',

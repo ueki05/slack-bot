@@ -10,12 +10,12 @@ var bot = controller.spawn({
     throw new Error('Could not connect to Slack');
   }
   new CronJob({
-    cronTime: '00 15 15 * * *',
+    cronTime: '00 30 8 * * *',
       onTick: function() {
         bot.say({
           channel: 'times_ueki',
         text: text,
-        username: 'test',
+        username: 'test' + '今日も一日頑張りましょう！',
         icon_url: ''
         });
       },
@@ -23,11 +23,11 @@ var bot = controller.spawn({
       timeZone: 'Asia/Tokyo'
   });
   new CronJob({
-    cronTime: '00 18 15 * * *',
+    cronTime: '00 00 18 * * *',
       onTick: function() {
         bot.say({
           channel: 'times_ueki',
-        text: text + '寝るまでに *進捗報告* をしましょう',
+        text: text + '今日も1日お疲れ様でした！\n寝るまでに *進捗報告* をしましょう！',
         username: 'test',
         icon_url: ''
         });

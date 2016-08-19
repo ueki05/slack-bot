@@ -1,6 +1,7 @@
 var Botkit = require('botkit');
 var CronJob = require('cron').CronJob;
 var controller = Botkit.slackbot();
+var text = '目標：目指せグランプリ！\n技術：Gitを使いこなす！\nチーム：一日一回進捗報告！\n';
 var bot = controller.spawn({
   token: process.env.token, 
 }).startRTM(function(err,bot,payload) {
@@ -9,11 +10,24 @@ var bot = controller.spawn({
     throw new Error('Could not connect to Slack');
   }
   new CronJob({
-    cronTime: '00 00 * * * *',
+    cronTime: '00 15 15 * * *',
       onTick: function() {
         bot.say({
           channel: 'times_ueki',
-        text: '目標：目指せグランプリ！ 技術：Gitを使いこなす！ チーム：一日一回進捗報告！',
+        text: text,
+        username: 'test',
+        icon_url: ''
+        });
+      },
+      start: true,
+      timeZone: 'Asia/Tokyo'
+  });
+  new CronJob({
+    cronTime: '00 18 15 * * *',
+      onTick: function() {
+        bot.say({
+          channel: 'times_ueki',
+        text: text + '寝るまでに *進捗報告* をしましょう',
         username: 'test',
         icon_url: ''
         });

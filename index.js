@@ -14,8 +14,8 @@ var bot = controller.spawn({
       onTick: function() {
         bot.say({
           channel: 'times_ueki',
-        text: text,
-        username: 'test' + '今日も一日頑張りましょう！',
+        text: text + '\n今日も一日頑張りましょう！' ,
+        username: 'test',
         icon_url: ''
         });
       },
@@ -27,7 +27,7 @@ var bot = controller.spawn({
       onTick: function() {
         bot.say({
           channel: 'times_ueki',
-        text: text + '今日も1日お疲れ様でした！\n寝るまでに *進捗報告* をしましょう！',
+        text: text + '\n今日も1日お疲れ様でした！\n寝るまでに *進捗報告* をしましょう！',
         username: 'test',
         icon_url: ''
         });

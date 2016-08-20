@@ -13,9 +13,9 @@ var bot = controller.spawn({
     cronTime: '00 30 8 * * *',
       onTick: function() {
         bot.say({
-          channel: 'times_ueki',
+          channel: 'ezk_pen',
         text: text + '\n今日も一日頑張りましょう！' ,
-        username: 'test',
+        username: 'periodically',
         icon_url: ''
         });
       },
@@ -26,9 +26,9 @@ var bot = controller.spawn({
     cronTime: '00 00 18 * * *',
       onTick: function() {
         bot.say({
-          channel: 'times_ueki',
+          channel: 'ezk_pen',
         text: text + '\n今日も1日お疲れ様でした！\n寝るまでに *進捗報告* をしましょう！',
-        username: 'test',
+        username: 'periodically',
         icon_url: ''
         });
       },

@@ -1,7 +1,7 @@
 var Botkit = require('botkit');
 var CronJob = require('cron').CronJob;
 var controller = Botkit.slackbot();
-var text = '目標：目指せグランプリ！\n技術：Gitを使いこなす！\nチーム：一日一回進捗報告！\n';
+var text = '目標：目指せグランプリ！\n技術：Gitを使いこなす！\nチーム：一日一回進捗報告！\n\n開発〆切：10月19日(水)';
 var bot = controller.spawn({
   token: process.env.token, 
 }).startRTM(function(err,bot,payload) {
@@ -23,7 +23,7 @@ var bot = controller.spawn({
       timeZone: 'Asia/Tokyo'
   });
   new CronJob({
-    cronTime: '00 00 18 * * *',
+    cronTime: '00 00 21 * * *',
       onTick: function() {
         bot.say({
           channel: 'ezk_pen',
